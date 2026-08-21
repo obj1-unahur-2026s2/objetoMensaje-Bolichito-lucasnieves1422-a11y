@@ -1,8 +1,8 @@
 import cosas.*
 
 object bolichito {
-  var vidriera = remeraRojaDeLino
-  var mostrador = muñecoCelesteDeVidrio
+  var vidriera = remera
+  var mostrador = munieco
   method vidriera() = vidriera 
   method mostrador() = mostrador
   method cambiarObjetoDevidriera(objetoDeVidriera) {
@@ -11,10 +11,10 @@ object bolichito {
   method cambiarObjetoDemostrador(objetoDeMostrador){
     mostrador = objetoDeMostrador
   }  
-  method esBrillante(objetoDeVidriera,objetoDeMostrador) = objetoDeVidriera.material().esBrillante() and objetoDeMostrador.material().esBrillante()
-  method esMonocromatico(objetoDeVidriera,objetoDeMostrador) = objetoDeVidriera.color() == objetoDeMostrador.color() 
-  method estaEquilibrado(objetoDeVidriera,objetoDeMostrador) = objetoDeVidriera.gramos() < objetoDeMostrador.gramos()
-  method tieneObjetoExhibido(unObjeto,unColor) = unObjeto.color()
-  method esMejorable(objetoDeVidriera, objetoDeMostrador) = !self.estaEquilibrado(objetoDeVidriera, objetoDeMostrador) || self.esMonocromatico(objetoDeVidriera, objetoDeMostrador)
-  method sePuedeOfrecerA(unaPersona,unObjeto) = unaPersona.leGusta(vidriera) || unaPersona.leGusta(mostrador)   
+  method esBrillante() = vidriera.material().esBrillante() and mostrador.material().esBrillante()
+  method esMonocromatico() = vidriera.color() == mostrador.color() 
+  method estaEquilibrado() = vidriera.gramos() < mostrador.gramos()
+  method tieneObjetoExhibido(unColor) = vidriera.color() == unColor || mostrador.color() == unColor 
+  method puedeMejorar() = !self.estaEquilibrado() || self.esMonocromatico()
+  method puedeOfrecerleAlgoA(unaPersona) = unaPersona.leGusta(vidriera) || unaPersona.leGusta(mostrador)   
 }

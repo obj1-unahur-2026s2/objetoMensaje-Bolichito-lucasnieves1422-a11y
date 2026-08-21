@@ -1,6 +1,12 @@
+/*
 
+|                                                      |
+|                        OBJETOS                       |
+|                                                      |
 
-object remeraRojaDeLino {
+*/
+
+object remera {
  
  method gramos() = 800
 
@@ -12,7 +18,7 @@ object remeraRojaDeLino {
 
 
 
-object pelotaPardaDeCuero {
+object pelota {
 
  method gramos() = 1300
 
@@ -24,7 +30,7 @@ object pelotaPardaDeCuero {
 
 
 
-object bibliotecaVerdeDeMadera {
+object biblioteca {
 
  method gramos() = 8000
 
@@ -36,7 +42,7 @@ object bibliotecaVerdeDeMadera {
 
 
 
-object muñecoCelesteDeVidrio {
+object munieco {
 
  var gramos = 0
 
@@ -56,7 +62,7 @@ object muñecoCelesteDeVidrio {
 
 
 
-object placaDeCobre {
+object placa {
 
  var color = celeste 
 
@@ -82,7 +88,38 @@ object placaDeCobre {
 
 }
 
+/*
 
+|                                                      |
+|                     MAS OBJETOS                      |
+|                                                      |
+
+*/
+
+object arito {
+  method color() = celeste
+  method gramos() = 180
+  method material() = cobre
+}
+
+object banquito {
+  var color = naranja
+  method color() = color
+  method gramos() = 1700
+  method material() = madera
+  method variarColor(unColor) {
+    color = unColor
+  }
+}
+
+object cajita {
+  var gramos = 0
+  method color() = rojo
+  method gramos(unObjeto) {
+    gramos = gramos + unObjeto.gramos()
+  }
+  method material() = cobre
+}
 
 /*
 
@@ -98,8 +135,6 @@ object rojo {
 
 }
 
-
-
 object verde {
 
  method esFuerte() = true
@@ -112,15 +147,15 @@ object celeste {
 
 }
 
-
-
 object pardo {
 
  method esFuerte() = false
 
 }
 
-
+object naranja {
+  method esFuerte() = true 
+}
 
 /*
 |                                                   |
